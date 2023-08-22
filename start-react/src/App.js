@@ -1,23 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+
+// 컴포넌트 HTML 태그로서 레고 블록처럼 사용 가능
+// 함수명 첫 글자를 대문자로
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1> 안녕!!! </h1>
     </div>
   );
 }
