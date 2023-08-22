@@ -1,6 +1,6 @@
 import './App.css';
 import { Header } from './component/Header';
-import { Body } from './component/Body';
+import { Body } from './component/body';
 import { Footer } from './component/Footer';
 import { Props } from './component/Props';
 
