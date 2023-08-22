@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리액트!!!!</title>
+    <!-- 리액트 라이브러리 (CDN으로 가져옴) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 바벨 CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- DOM 요소 Tree 형태를 가짐. 자식태그 등이 DOM 요소로 존재 rendering 과정 -->
+    <!-- 가상 DOM : 리액트에서 가상의 객체 모델을 만들어 변화되는 부분만 바꾼다. -->
+    <!-- 리액트가 렌더링 할 대상 -->
+    <div id="root"></div>
+
+    <!-- 일반적이지 않은 script 언어 JSX (JavaScriptXML)-->
+    <!-- 리액트의 JSX 문법을 번역하는 번역기가 필요 -->
+    <script type="text/babel">
+      // 1. JSX 문법의 html을 준비한다.
+      let html = (
+        <div>
+          <h1>hello react!</h1>
+          <p>문단</p>
+          <p>리액트</p>
+        </div>
+      );
+      // 2. JSX를 렌더링할 타겟을 획득한다.
+      const root = document.querySelector('#root');
+      // 3. 렌더링한다.
+      ReactDOM.render(html, root);
+    </script>
+  </body>
+</html>

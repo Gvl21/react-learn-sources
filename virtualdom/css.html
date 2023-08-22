@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리액트!</title>
+
+    <!-- 리액트 라이브러리 (CDN으로 가져옴) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 바벨 번역 라이브러리 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function makeJSX() {
+        const css1 = {
+          // 속성명이 kebob-case => camelCase
+          // 속성값이 문자열
+          // 객체로 만들어 스타일 요소 사용
+          color: 'blue',
+          backgroundColor: '#dadada',
+          fontSize: '3em',
+        };
+        return(
+          // JSX에서는 일반 JS 변수 및 문법 적용시 {} 중괄호 사용
+          <h1 style = {css1}> 스타일 지정한 JSX</h1>
+        )
+      }
+
+      const root = document.querySelector('#root');
+      ReactDOM.render(makeJSX(), root);
+    </script>
+  </body>
+</html>

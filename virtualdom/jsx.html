@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리액트!!!!</title>
+    <!-- 리액트 라이브러리 (CDN으로 가져옴) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 바벨 CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      'use strict'; // 모던 자바스크립트 문법 등을 엄격하게 적용
+
+      //  화면 고칠떄마다 단어들이 랜덤하게 등장
+      function makeJSX() {
+        const ranNum = Math.floor(Math.random() * 3);
+        if (ranNum === 0) {
+          return <h1>React</h1>;
+        } else if (ranNum === 1) {
+          return <h2>JSX</h2>;
+        } else {
+          return <h3>useState</h3>;
+        }
+      }
+      ReactDOM.render(makeJSX(), root);
+    </script>
+  </body>
+</html>
