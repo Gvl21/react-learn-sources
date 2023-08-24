@@ -1,5 +1,6 @@
 import './App.css';
 import { Header } from './component/Header';
+import Ref from './component/Ref';
 // import { Body } from './component/Body';
 // import { Footer } from './component/Footer';
 // import { Props } from './component/Props';
@@ -65,6 +66,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
+      <Ref />
       <StatesProps />
       {/* <StateTextArea />
       <StateMulti />
