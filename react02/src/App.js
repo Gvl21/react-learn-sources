@@ -1,8 +1,19 @@
 import './App.css';
 import { Header } from './component/Header';
-import { Body } from './component/body';
-import { Footer } from './component/Footer';
-import { Props } from './component/Props';
+// import { Body } from './component/Body';
+// import { Footer } from './component/Footer';
+// import { Props } from './component/Props';
+// import PropsSpread from './component/PropSpread';
+// import Parent from './component/Parent';
+// import Child from './component/Child';
+// import EventHandle from './component/EventHandle';
+// import StateHook from './component/StateHook';
+// import StateInput from './component/StateInput';
+// import StateInputDate from './component/StateInputDate';
+// import StateSelect from './component/StateSelect';
+// import StateTextArea from './component/StateTextArea';
+// import StateMulti from './component/StateMulti';
+import StatesProps from './component/StatesProps';
 
 // // 화살표 함수를 사용하여 컴포넌트 만들기
 // // 함수형 컴포넌트 <-> 클래스형 컴포넌트
@@ -46,12 +57,29 @@ import { Props } from './component/Props';
 // JSX는 반드시 닫는 태그가 있어야 한다.
 function App() {
   const name = '리액트';
+  const personProps = {
+    name: '홍길동',
+    age: 30,
+    // skillList: ['react', 'javascript', 'java'],
+  };
   return (
     <div className='App'>
       <Header />
+      <StatesProps />
+      {/* <StateTextArea />
+      <StateMulti />
+      <EventHandle />
+      <StateHook />
+      <StateInput />
+      <StateInputDate />
+      <StateSelect />
       <Props name={name} study={'열공합시다.'} />
       <Body />
-      <Footer />
+      <Parent>
+        <Child />
+      </Parent>
+      <PropsSpread {...personProps} />
+      <Footer /> */}
     </div>
   );
 }
