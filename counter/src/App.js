@@ -73,7 +73,7 @@ function App() {
       <h1>카운터</h1>
       <section>
         <Viewer count={count} />
-        {count % 2 == 0 && <Even />}
+        {count % 2 ===0 && <Even />}
       </section>
       <section>
         <Controller setCountHandler={setCountHandler} />

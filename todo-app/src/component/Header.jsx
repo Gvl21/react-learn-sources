@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 
+// 오늘 날짜 표시
 function Header() {
   return (
     <div className='Header'>
