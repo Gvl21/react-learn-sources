@@ -1,12 +1,7 @@
 import React from 'react';
 
 function ProfileList() {
-  return (
-    <div>
-
-      
-    </div>
-  );
+  return <div></div>;
 }
 
 export default ProfileList;

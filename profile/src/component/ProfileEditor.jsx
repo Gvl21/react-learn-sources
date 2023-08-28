@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 function ProfileEditor({}) {
-  return;
-  <div></div>;
+  return <div></div>;
 }
 
 export default ProfileEditor;
