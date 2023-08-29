@@ -5,6 +5,7 @@ import ProfileEditor from './component/ProfileEditor';
 import ProfileList from './component/ProfileList';
 import ProfileItem from './component/ProfileItem';
 
+
 const user = {
   id: 1,
   userName: '',
@@ -13,30 +14,27 @@ const user = {
 };
 
 function App() {
-    const [user, setUser] = useState([{
-        name: '',
-        email: '',
-        age: '',}])
-  const idRef = useRef(0);
-  const onCreate = (nameValue, emailValue, ageValue) => {
-    const newUser = {
-      id: idRef.current,
-      userName: nameValue,
-      emal: emailValue,
-      age: ageValue,
-    };
-    setUser([newUser, ...user]);
-    idRef.current += 1;
+  const [userArr, arrSet] = useState([{}]);
+
+  const [user, userSet] = useState({
+    userName: '',
+    email: '',
+    age: '',
+  });
+  const userRef = useRef(0);
+  const onSave = () => {
+    userSet({ ...user, id: userRef });
+    arrSet(...userArr, user);
+    userRef.current += 1;
   };
 
   return (
     <div className='App'>
       <Header />
-      <ProfileEditor onCreate={onCreate} />
+      <ProfileEditor onSave={onSave} user = {user} userSet = {userSet}/>
       <ProfileList />
-      <ProfileItem user={user} />
+      <ProfileItem />
     </div>
   );
 }
-
 export default App;
