@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,400;10..48,600&family=Dongle:wght@300&display=swap');
+
+* {
+  font-family: 'Dongle', sans-serif;
+  font-size: 1.8rem;
+}
+
+body {
+  
+
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
