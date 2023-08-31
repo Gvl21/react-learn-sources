@@ -1,8 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import './TodoEditor.css';
+import { TodoContext } from '../App';
 
 // 새로운 할 일 생성
-function TodoEditor({ onCreate }) {
+function TodoEditor() {
+  const { onCreate } = useContext(TodoContext);
+
   const inputRef = useRef();
   const [content, setContent] = useState('');
   // 입력 태그 이벤트 핸들러
