@@ -27,9 +27,9 @@ function TodoList() {
   const onChangeHandler = (event) => {
     setSearch(event.target.value);
   };
-  {
+  
     /* [ { id, content, date, isDone }, {}, {} ... ] */
-  }
+  
   const getSearchResult = () => {
     // 할 일 목록에서 단어를 포함하는 새로운 배열을 반환하는 함수
     return search === ''
