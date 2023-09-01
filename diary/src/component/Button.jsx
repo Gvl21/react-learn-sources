@@ -1,8 +1,16 @@
 import React from 'react';
 import './Button.css';
 
-function Button() {
-  return <button className='Button'>버튼이에요</button>;
+function Button({ text, onClick, type }) {
+    
+  return (
+    <button
+      className={['Button', `Button_${type}`].join(' ')}
+      onClick={onClick}>
+      
+      {text}
+    </button>
+  );
 }
 
 export default Button;

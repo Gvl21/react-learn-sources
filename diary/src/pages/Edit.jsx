@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Editor from '../component/Editor';
 
 function Edit() {
   return (
-    <div>Edit</div>
-  )
+    <div>
+      <Editor />
+    </div>
+  );
 }
 
-export default Edit
+export default Edit;
