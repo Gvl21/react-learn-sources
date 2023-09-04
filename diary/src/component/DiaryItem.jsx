@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function DiaryItem({ id, emotionId, content, date }) {
     // useNvigate 커스텀 훅 위치를 이동시키는 함수를 반환.
-    // navigate 함수 
+    // navigate 함수
     // -1 : 뒤로가기
     // 기타 문자열 : 해당 path로 이동
     const navigate = useNavigate();
@@ -35,8 +35,9 @@ function DiaryItem({ id, emotionId, content, date }) {
                 <div class='date_wrapper'>
                     {new Date(date).toLocaleDateString()}
                 </div>
-                <div class='content_wrapper'>{content}</div>
+                <div class='content_wrapper'>{content.slice(0, 30)}</div>
             </section>
+
             <section className='button_section'>
                 <Button text={'수정하기'} onClick={goEdit} />
             </section>

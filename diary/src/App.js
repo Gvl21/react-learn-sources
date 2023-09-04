@@ -11,13 +11,13 @@ import { useRef } from 'react';
 const mockData = [
     {
         id: 1,
-        date: new Date().getTime(),
+        date: new Date(2033, 3, 3).getTime(),
         emotionId: 1,
         content: '안녕 일기1',
     },
     {
         id: 2,
-        date: new Date().getTime(),
+        date: new Date(2020, 10, 10).getTime(),
         emotionId: 3,
         content: '안녕 일기2',
     },
@@ -47,9 +47,6 @@ function App() {
                         <Route path='/diary/:id' element={<Diary />} />
                         <Route path='/edit/:id' element={<Edit />} />
                     </Routes>
-                    <div>
-                        <Link to='/edit/1'>Edit</Link>
-                    </div>
                 </div>
             </DispatchContext.Provider>
         </StateContext.Provider>

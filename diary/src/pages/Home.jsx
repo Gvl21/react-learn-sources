@@ -7,7 +7,6 @@ import { StateContext } from '../App';
 
 function Home() {
     const data = useContext(StateContext);
-
     const [pivotDate, setPivotDate] = useState(new Date());
     const headerTitle = `${pivotDate.getFullYear()}년 ${
         pivotDate.getMonth() + 1
