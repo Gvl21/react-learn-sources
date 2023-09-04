@@ -1,0 +1,41 @@
+.Viewer section {
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.Viewer h4 {
+    margin-bottom: 10px;
+}
+.Viewer .image_section {
+    width: 200px;
+    height: 160px;
+    border-radius: 20px;
+}
+
+.Viewer .content_wrapper {
+    width: 85%;
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+.Viewer .image_section_1 {
+    background-color: #64c964;
+}
+.Viewer .image_section_2 {
+    background-color: #9dd772;
+}
+.Viewer .image_section_3 {
+    background-color: #fdce17;
+}
+.Viewer .image_section_4 {
+    background-color: #fd8446;
+}
+.Viewer .image_section_5 {
+    background-color: #fd565f;
+}

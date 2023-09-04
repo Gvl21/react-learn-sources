@@ -4,6 +4,7 @@ import useDiary from '../hooks/useDiary';
 import Header from '../component/Header';
 import Button from '../component/Button';
 import { getFormatDate } from '../util';
+import Viewer from '../component/Viewer';
 
 function Diary() {
     // 1. 컴포넌트 마운트 : diary = undefined
@@ -33,10 +34,11 @@ function Diary() {
         return (
             <div>
                 <Header
-                    title={'타이틀'}
+                    title={title}
                     left={<Button text={'뒤로가기'} onClick={goBack} />}
                     right={<Button text={'수정하기'} onClick={goEdit} />}
                 />
+                <Viewer emotionId={emotionId} content={content} />
                 <div>{id}번 Diary</div>
                 {/* <div>{diary.date}</div> */}
                 <div>{diary.content}번</div>
