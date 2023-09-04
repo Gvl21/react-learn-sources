@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../component/Button';
 import Header from '../component/Header';
-import { useState } from 'react';
 import DiaryList from '../component/DiaryList';
+import Editor from '../component/Editor';
+import { StateContext } from '../App';
 
 function Home() {
+    const data = useContext(StateContext);
+
     const [pivotDate, setPivotDate] = useState(new Date());
     const headerTitle = `${pivotDate.getFullYear()}년 ${
         pivotDate.getMonth() + 1
     }월`;
     const onDecreaseMonth = () => {
-        setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth()-1));
+        setPivotDate(
+            new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1)
+        );
     };
     const onIncreaseMonth = () => {
-        setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth()+1));
-
+        setPivotDate(
+            new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1)
+        );
     };
     return (
         <div>
@@ -23,7 +29,7 @@ function Home() {
                 left={<Button text={'<'} onClick={onDecreaseMonth} />}
                 right={<Button text={'>'} onClick={onIncreaseMonth} />}
             />
-            <DiaryList />
+            <DiaryList data={data} />
         </div>
     );
 

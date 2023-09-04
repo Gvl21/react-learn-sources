@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './DiaryList.css';
 import Button from './Button';
 import DiaryItem from './DiaryItem';
-
+import { useNavigate } from 'react-router-dom';
 
 function DiaryList({ data }) {
+    const navigate = useNavigate();
+    const goNew = () => {
+        navigate('/new');
+    };
     return (
         <div className='DiaryList'>
             {/* 상단부 : 정렬 및 새 일기 쓰기 */}
@@ -18,14 +22,18 @@ function DiaryList({ data }) {
                     <option value=''>좋은 감정</option>
                     <option value=''>안 좋은 감정</option>
                 </select>
-                <Button text={'새 일기 쓰기'} type={'positive'}/>
+                <Button
+                    text={'새 일기 쓰기'}
+                    type={'positive'}
+                    onClick={goNew}
+                />
             </div>
             {/* 하단부 : 일기 목록 */}
-            {/* <div>
-                {data.map((i) => {
-                    <DiaryItem key={i.id}/>;
-                })}
-            </div> */}
+            <div>
+                {data.map((item) => (
+                    <DiaryItem key={item.id} {...item} />
+                ))}
+            </div>
         </div>
     );
 }
