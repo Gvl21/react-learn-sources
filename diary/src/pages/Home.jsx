@@ -1,16 +1,31 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../component/Button';
 import Header from '../component/Header';
 import DiaryList from '../component/DiaryList';
 import Editor from '../component/Editor';
 import { StateContext } from '../App';
+import { getMonthRange } from '../util';
 
 function Home() {
     const data = useContext(StateContext);
     const [pivotDate, setPivotDate] = useState(new Date());
+    const [filteredData, setFilteredData] = useState([]);
+
     const headerTitle = `${pivotDate.getFullYear()}년 ${
         pivotDate.getMonth() + 1
     }월`;
+    useEffect(() => {
+        // 데이터가 있을 경우에만 수행
+        if (data.length > 0) {
+            const { beginTimeStamp, endTimeStamp } = getMonthRange(pivotDate);
+            setFilteredData(
+                data.filter(
+                    (e) => beginTimeStamp <= e.date && e.date <= endTimeStamp
+                )
+            );
+        }
+    }, [data, pivotDate]);
+
     const onDecreaseMonth = () => {
         setPivotDate(
             new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1)
@@ -28,7 +43,7 @@ function Home() {
                 left={<Button text={'<'} onClick={onDecreaseMonth} />}
                 right={<Button text={'>'} onClick={onIncreaseMonth} />}
             />
-            <DiaryList data={data} />
+            <DiaryList data={filteredData} />
         </div>
     );
 

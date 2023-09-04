@@ -11,13 +11,13 @@ import { useRef } from 'react';
 const mockData = [
     {
         id: 1,
-        date: new Date(2033, 3, 3).getTime(),
+        date: new Date(2023, 9, 3).getTime(),
         emotionId: 1,
         content: '안녕 일기1',
     },
     {
         id: 2,
-        date: new Date(2020, 10, 10).getTime(),
+        date: new Date(2023, 11, 10).getTime(),
         emotionId: 3,
         content: '안녕 일기2',
     },
@@ -36,7 +36,7 @@ export const DispatchContext = React.createContext();
 
 function App() {
     const [data, dispatch] = useReducer(reducer, mockData);
-    const idRef = useRef(3);
+    const idRef = useRef(4);
     return (
         <StateContext.Provider value={data}>
             <DispatchContext.Provider value={{}}>

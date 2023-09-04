@@ -5,10 +5,28 @@ import emotion4 from './img/emotion4.png';
 import emotion5 from './img/emotion5.png';
 
 export const getFormatDate = (dateObj) => {
-    const year = String(dateObj.getFullYear()).padStart(4, 0);
+    const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, 0);
     const date = String(dateObj.getDate()).padStart(2, 0);
     return `${year}-${month}-${date}`;
+};
+
+export const getMonthRange = (date) => {
+    const beginTimeStamp = new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        1
+    ).getTime();
+    const endTimeStamp = new Date(
+        date.getFullYear(),
+        date.getMonth() + 1,
+        1 - 1,
+        23,
+        59,
+        59,
+        999
+    ).getTime();
+    return { beginTimeStamp, endTimeStamp };
 };
 
 export const getEmotionImgById = (id) => {

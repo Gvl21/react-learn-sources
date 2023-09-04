@@ -18,9 +18,13 @@ function DiaryList({ data }) {
 
     useEffect(() => {
         const compare = (a, b) => {
-            if (sortType === 'latest') return b.date - a.date;
-            else return a.date - b.date;
+            if (sortType === 'latest') {
+                return Number(b.date) - Number(a.date);
+            } else {
+                return Number(a.date) - Number(b.date);
+            }
         };
+
         // 정렬
         const sortedList = data.slice().sort(compare);
         // 정렬된 데이터를 설정
@@ -64,6 +68,7 @@ function DiaryList({ data }) {
             <div>
                 {sortedData.map((item) => (
                     <DiaryItem key={item.id} {...item} />
+                
                 ))}
             </div>
         </div>
