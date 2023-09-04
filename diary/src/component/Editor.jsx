@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from './Button';
 import { getFormatDate, emotionList } from '../util';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import './Editor.css';
 import EmotionItem from './EmotionItem';
+import { DispatchContext } from '../App';
 
 function Editor({ initData }) {
+    const { onCreate } = useContext(DispatchContext);
     const navigate = useNavigate();
     const dateObj = new Date();
     const [date, setDate] = useState(getFormatDate(dateObj));
@@ -28,7 +29,8 @@ function Editor({ initData }) {
         setContent(e.target.value);
     };
     const onSubmitHandler = () => {
-        alert('제출 완료');
+        onCreate(date, content, emotionId);
+        navigate('/');
     };
     const handleChangeEmotion = (emotionId) => {
         setEmotionId(emotionId);
