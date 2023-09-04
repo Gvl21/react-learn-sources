@@ -7,9 +7,12 @@
     align-items: center;
     text-align: center;
 }
+
 .Viewer h4 {
+    margin-top: 20px;
     margin-bottom: 10px;
 }
+
 .Viewer .image_section {
     width: 200px;
     height: 160px;

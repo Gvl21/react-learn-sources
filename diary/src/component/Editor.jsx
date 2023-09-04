@@ -37,7 +37,6 @@ function Editor({ initData }) {
 
     return (
         <div className='Editor'>
-            <Header />
             {/* 오늘 언제? */}
             <section>
                 <h3>오늘은 ?</h3>
