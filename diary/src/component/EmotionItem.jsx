@@ -18,5 +18,5 @@ function EmotionItem({ id, img, name, onClick, isSelected }) {
         </div>
     );
 }
-
-export default EmotionItem;
+// 메모이제이션 컴포넌트로 만들어 리렌더링 최적화
+export default React.memo(EmotionItem);

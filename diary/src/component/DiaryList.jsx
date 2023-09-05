@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './DiaryList.css';
 import Button from './Button';
 import DiaryItem from './DiaryItem';
@@ -30,9 +30,9 @@ function DiaryList({ data }) {
         // 정렬된 데이터를 설정
         setSortedData(sortedList);
     }, [data, sortType]);
-    const handleOnChange = (e) => {
+    const handleOnChange = useCallback((e) => {
         setSortType(e.target.value);
-    };
+    }, []);
     const navigate = useNavigate();
     const goNew = () => {
         navigate('/new');
@@ -68,7 +68,6 @@ function DiaryList({ data }) {
             <div>
                 {sortedData.map((item) => (
                     <DiaryItem key={item.id} {...item} />
-                
                 ))}
             </div>
         </div>

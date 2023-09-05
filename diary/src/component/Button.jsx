@@ -13,4 +13,4 @@ function Button({ text, onClick, type }) {
   );
 }
 
-export default Button;
+export default React.memo(Button);

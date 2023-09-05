@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import Button from './Button';
 import { getFormatDate, emotionList } from '../util';
 import { useNavigate } from 'react-router-dom';
@@ -31,7 +31,7 @@ function Editor({ initData }) {
     const onSubmitHandler = () => {
         // 수정(펀집) 페이지일 때
         if (initData) {
-            onUpdate(initData.id, date, emotionId, content)
+            onUpdate(initData.id, date, emotionId, content);
             navigate('/');
             // 새 일기쓰기 페이지일때
         } else {
@@ -39,9 +39,9 @@ function Editor({ initData }) {
             navigate('/');
         }
     };
-    const handleChangeEmotion = (emotionId) => {
+    const handleChangeEmotion = useCallback((emotionId) => {
         setEmotionId(emotionId);
-    };
+    }, []);
     const handleBack = () => navigate(-1);
 
     return (

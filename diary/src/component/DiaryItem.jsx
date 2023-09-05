@@ -91,4 +91,4 @@ function DiaryItem({ id, emotionId, content, date }) {
     );
 }
 
-export default DiaryItem;
+export default React.memo(DiaryItem);

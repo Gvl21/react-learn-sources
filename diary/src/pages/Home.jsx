@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from '../component/Button';
 import Header from '../component/Header';
 import DiaryList from '../component/DiaryList';
-import Editor from '../component/Editor';
 import { StateContext } from '../App';
 import { getMonthRange } from '../util';
 
