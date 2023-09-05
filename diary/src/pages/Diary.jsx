@@ -39,9 +39,9 @@ function Diary() {
                     right={<Button text={'수정하기'} onClick={goEdit} />}
                 />
                 <Viewer emotionId={emotionId} content={content} />
-                <div>{id}번 Diary</div>
+                {/* <div>{id}번 Diary</div> */}
                 {/* <div>{diary.date}</div> */}
-                <div>{diary.content}번</div>
+                {/* <div>{diary.content}번</div> */}
             </div>
         );
     }
