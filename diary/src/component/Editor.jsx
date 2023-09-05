@@ -7,7 +7,7 @@ import EmotionItem from './EmotionItem';
 import { DispatchContext } from '../App';
 
 function Editor({ initData }) {
-    const { onCreate } = useContext(DispatchContext);
+    const { onCreate, onUpdate } = useContext(DispatchContext);
     const navigate = useNavigate();
     const dateObj = new Date();
     const [date, setDate] = useState(getFormatDate(dateObj));
@@ -29,8 +29,15 @@ function Editor({ initData }) {
         setContent(e.target.value);
     };
     const onSubmitHandler = () => {
-        onCreate(date, content, emotionId);
-        navigate('/');
+        // 수정(펀집) 페이지일 때
+        if (initData) {
+            onUpdate(initData.id, date, emotionId, content)
+            navigate('/');
+            // 새 일기쓰기 페이지일때
+        } else {
+            onCreate(date, content, emotionId);
+            navigate('/');
+        }
     };
     const handleChangeEmotion = (emotionId) => {
         setEmotionId(emotionId);

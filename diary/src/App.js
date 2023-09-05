@@ -33,6 +33,15 @@ function reducer(state, action) {
         case 'CREATE': {
             return [action.data, ...state];
         }
+        case 'UPDATE': {
+            // 기존 데이터 배열에서 id에 매칭되는 내용 수정 (삼항연산자 사용)
+            return state.map((e) =>
+                String(e.id) === String(action.data.id) ? { ...action.data } : e
+            );
+        }
+        case 'DELETE': {
+            return state.filter((e) => String(e.id) !== String(action.id));
+        }
 
         default:
             return state;
@@ -58,9 +67,23 @@ function App() {
         });
         idRef.current += 1;
     };
+    // 수정 함수
+    const onUpdate = (id, date, emotionId, content) => {
+        // Editor에서 데이터를 받아서 action 객체 data로
+        // dispatch 함수를 실행 => reducer 함수에서
+        // dispatch 함수의 파라미터 => action 객체
+        dispatch({
+            type: 'UPDATE',
+            data: { id, date: new Date(date).getTime(), emotionId, content },
+        });
+    };
+    const onDelete = (id) => {
+        dispatch({ type: 'DELETE', id });
+    };
+
     return (
         <StateContext.Provider value={data}>
-            <DispatchContext.Provider value={{ onCreate }}>
+            <DispatchContext.Provider value={{ onCreate, onUpdate, onDelete }}>
                 <div className='App'>
                     <Routes>
                         <Route path='/' element={<Home />} />
