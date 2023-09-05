@@ -53,11 +53,6 @@ function DiaryList({ data }) {
                         </option>
                     ))}
                 </select>
-                <select name='' id=''>
-                    <option value=''>모든 감정</option>
-                    <option value=''>좋은 감정</option>
-                    <option value=''>안 좋은 감정</option>
-                </select>
                 <Button
                     text={'새 일기 쓰기'}
                     type={'positive'}

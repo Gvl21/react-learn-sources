@@ -6,6 +6,7 @@ import { StateContext } from '../App';
 import { getMonthRange } from '../util';
 
 function Home() {
+    document.title = '내 일기';
     const data = useContext(StateContext);
     const [pivotDate, setPivotDate] = useState(new Date());
     const [filteredData, setFilteredData] = useState([]);

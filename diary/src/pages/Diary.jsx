@@ -7,6 +7,7 @@ import { getFormatDate } from '../util';
 import Viewer from '../component/Viewer';
 
 function Diary() {
+    document.title = "일기"
     // 1. 컴포넌트 마운트 : diary = undefined
     // URL 동적경로 파라미터 불러오기
     // 문자열을 반환한다. /diary/{id}

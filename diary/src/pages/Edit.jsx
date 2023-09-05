@@ -32,6 +32,7 @@ import useDiary from '../hooks/useDiary';
 import { DispatchContext } from '../App';
 
 function Edit() {
+    document.title = '일기 수정';
     const { onDelete } = useContext(DispatchContext);
     // URL 에서 동적 주소(매개변수)를 id로 받아온다.
     const { id } = useParams();

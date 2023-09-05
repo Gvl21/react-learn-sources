@@ -5,6 +5,7 @@ import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 
 function New() {
+    document.title = '새 일기'
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1);
