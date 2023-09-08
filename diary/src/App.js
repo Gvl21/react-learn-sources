@@ -30,9 +30,10 @@ import { useRef } from 'react';
 function reducer(state, action) {
     switch (action.type) {
         case 'INIT': {
+            // 로컬 스토리지에서 가져온 데이터로 상태를 변경
             return action.data;
         }
-
+        
         case 'CREATE': {
             const newState = [action.data, ...state];
             localStorage.setItem('diaryList', JSON.stringify(newState));
